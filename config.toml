@@ -16,7 +16,8 @@ always_keep_install = false         # Keep failed installations for debugging
 plugin_autoupdate_last_check_duration = "1d"
 verbose = false                     # Verbose output for debugging
 yes = false                         # Auto-answer yes to prompts
-idiomatic_version_file_enable_tools = []  # e.g., ["node", "python", "ruby"]
+idiomatic_version_file_enable_tools = ["node", "python", "ruby", "go"]  # Auto-switch versions per project
+trusted_config_paths = ["~/dev"]           # Skip trust prompts in dev directory
 
 [settings.status]
 missing_tools = "if_other_versions_installed"
@@ -37,6 +38,7 @@ uvx = true                          # Use uvx instead of pipx (faster)
 # ─────────────────────────────────────────────────────────────────────────────
 # PROGRAMMING LANGUAGES & RUNTIMES
 # ─────────────────────────────────────────────────────────────────────────────
+python = "3.12"                     # Python interpreter - pinned for stability (https://python.org)
 node = "latest"                     # JavaScript runtime (https://nodejs.org)
 bun = "latest"                      # Fast JavaScript runtime & toolkit (https://bun.sh)
 deno = "latest"                     # Secure JavaScript/TypeScript runtime (https://deno.com)
@@ -68,9 +70,9 @@ difftastic = "latest"               # Structural diff tool (https://difftastic.w
 # CI/CD & DEVOPS
 # ─────────────────────────────────────────────────────────────────────────────
 act = "latest"                      # Run GitHub Actions locally (https://github.com/nektos/act)
-argocd = "latest"                   # Kubernetes GitOps continuous delivery (https://argo-cd.readthedocs.io)
-helm = "latest"                     # Kubernetes package manager (https://helm.sh)
-terraform = "latest"                # Infrastructure as Code tool (https://terraform.io)
+argocd = "2"                        # Kubernetes GitOps - pinned major (https://argo-cd.readthedocs.io)
+helm = "3"                          # Kubernetes package manager - pinned major (https://helm.sh)
+terraform = "1"                     # Infrastructure as Code - pinned major (https://terraform.io)
 ansible = "latest"                  # IT automation platform (https://ansible.com)
 buildpack = "latest"                # Cloud Native Buildpacks CLI (https://buildpacks.io)
 trunk = "latest"                    # Meta linter & DevEx toolkit (https://trunk.io)
