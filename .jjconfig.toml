@@ -1,0 +1,6 @@
+user.email = "steele_dude_13@hotmail.com"
+user.name = "Thomo1318"
+
+[include]
+path = "/Users/admin/dev/activeProjects/jjConfig/config.toml"
+

@@ -1,0 +1,3 @@
+[tools]
+# No local tools needed - uses global mise config
+# This project manages ~/.config/mise/config.toml
