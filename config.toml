@@ -1,0 +1,238 @@
+# Mise Global Configuration
+# Location: ~/.config/mise/config.toml
+# Documentation: https://mise.jdx.dev/configuration.html
+
+# ============================================================================
+# SETTINGS
+# ============================================================================
+[settings]
+experimental = true                 # Enable experimental features
+jobs = 8                            # Parallel job count
+not_found_auto_install = true       # Auto-install missing tools
+task_output = "prefix"              # Output format: "prefix" | "interleave" | "quiet"
+http_timeout = "30s"                # HTTP timeout for downloads
+always_keep_download = false        # Keep downloads after installation
+always_keep_install = false         # Keep failed installations for debugging
+plugin_autoupdate_last_check_duration = "1d"
+verbose = false                     # Verbose output for debugging
+yes = false                         # Auto-answer yes to prompts
+idiomatic_version_file_enable_tools = []  # e.g., ["node", "python", "ruby"]
+
+[settings.status]
+missing_tools = "if_other_versions_installed"
+show_env = true
+show_tools = true
+
+[settings.python]
+uv_venv_auto = true                 # Auto-create/activate uv virtual environments
+
+[settings.pipx]
+uvx = true                          # Use uvx instead of pipx (faster)
+
+# ============================================================================
+# TOOLS
+# ============================================================================
+[tools]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PROGRAMMING LANGUAGES & RUNTIMES
+# ─────────────────────────────────────────────────────────────────────────────
+node = "latest"                     # JavaScript runtime (https://nodejs.org)
+bun = "latest"                      # Fast JavaScript runtime & toolkit (https://bun.sh)
+deno = "latest"                     # Secure JavaScript/TypeScript runtime (https://deno.com)
+rust = "latest"                     # Systems programming language (https://rust-lang.org)
+go = "latest"                       # Google's concurrent programming language (https://go.dev)
+java = "latest"                     # Enterprise programming language (https://openjdk.org)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PACKAGE MANAGERS & BUILD TOOLS
+# ─────────────────────────────────────────────────────────────────────────────
+uv = "latest"                       # Fast Python package installer (https://github.com/astral-sh/uv)
+pdm = "latest"                      # Modern Python package manager (https://pdm.fming.dev)
+pnpm = "latest"                     # Fast, disk-efficient npm alternative (https://pnpm.io)
+gradle = "latest"                   # Java build automation tool (https://gradle.org)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# VERSION CONTROL
+# ─────────────────────────────────────────────────────────────────────────────
+lazygit = "latest"                  # Git TUI interface (https://github.com/jesseduffield/lazygit)
+jujutsu = "latest"                  # Modern VCS compatible with Git (https://github.com/martinvonz/jj)
+jujutsu-ui = "latest"               # TUI for Jujutsu (https://github.com/noahmayr/jjui)
+git-cliff = "latest"                # Changelog generator from Git history (https://git-cliff.org)
+git-lfs = "latest"                  # Git Large File Storage (https://git-lfs.com)
+graphite = "latest"                 # Stacked PRs workflow tool (https://graphite.dev)
+delta = "latest"                    # Syntax-highlighting pager for git diffs (https://dandavison.github.io/delta)
+difftastic = "latest"               # Structural diff tool (https://difftastic.wilfred.me.uk)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CI/CD & DEVOPS
+# ─────────────────────────────────────────────────────────────────────────────
+act = "latest"                      # Run GitHub Actions locally (https://github.com/nektos/act)
+argocd = "latest"                   # Kubernetes GitOps continuous delivery (https://argo-cd.readthedocs.io)
+helm = "latest"                     # Kubernetes package manager (https://helm.sh)
+terraform = "latest"                # Infrastructure as Code tool (https://terraform.io)
+ansible = "latest"                  # IT automation platform (https://ansible.com)
+buildpack = "latest"                # Cloud Native Buildpacks CLI (https://buildpacks.io)
+trunk = "latest"                    # Meta linter & DevEx toolkit (https://trunk.io)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CONTAINERS & VIRTUALIZATION
+# ─────────────────────────────────────────────────────────────────────────────
+lima = "latest"                     # Linux VMs on macOS (https://lima-vm.io)
+colima = "latest"                   # Container runtimes on macOS (https://github.com/abiosoft/colima)
+podman = "latest"                   # Daemonless container engine (https://podman.io)
+talos = "1.11.5"                    # Kubernetes OS (https://talos.dev)
+talosctl = "1.11.5"                 # CLI for Talos Linux
+
+# ─────────────────────────────────────────────────────────────────────────────
+# AI & CODE ASSISTANTS
+# ─────────────────────────────────────────────────────────────────────────────
+claude-code = "latest"              # Anthropic Claude CLI agent (https://anthropic.com)
+claude-squad = "latest"             # Multi-instance Claude orchestrator
+gemini-cli = "latest"               # Google Gemini CLI agent (https://github.com/google-gemini/gemini-cli)
+codex = "latest"                    # OpenAI Codex CLI (https://openai.com)
+codebuff = "latest"                 # AI coding assistant
+opencode = "latest"                 # Open-source AI coding tool
+snyk = "latest"                     # Security vulnerability scanner (https://snyk.io)
+specstory = "latest"                # AI prompt & workflow manager
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DATABASE & DATA TOOLS
+# ─────────────────────────────────────────────────────────────────────────────
+mysql = "latest"                    # MySQL database client (https://mysql.com)
+supabase = "latest"                 # Supabase CLI (https://supabase.com)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CLI UTILITIES - SEARCH & NAVIGATION
+# ─────────────────────────────────────────────────────────────────────────────
+ripgrep = "latest"                  # Ultra-fast grep alternative (https://github.com/BurntSushi/ripgrep)
+ripgrep-all = "latest"              # ripgrep with PDF/archive support (https://github.com/phiresky/ripgrep-all)
+fzf = "latest"                      # Command-line fuzzy finder (https://github.com/junegunn/fzf)
+zoxide = "latest"                   # Smarter cd command (https://github.com/ajeetdsouza/zoxide)
+tree-sitter = "latest"              # Incremental parsing library (https://tree-sitter.github.io)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CLI UTILITIES - FILE & TEXT PROCESSING
+# ─────────────────────────────────────────────────────────────────────────────
+jq = "latest"                       # Command-line JSON processor (https://jqlang.github.io/jq)
+fx = "latest"                       # Terminal JSON viewer (https://fx.wtf)
+glow = "latest"                     # Markdown renderer for terminal (https://github.com/charmbracelet/glow)
+pandoc = "latest"                   # Universal document converter (https://pandoc.org)
+bat-extras = "latest"               # Bash scripts using bat (https://github.com/eth-p/bat-extras)
+dust = "latest"                     # Intuitive disk usage tool (https://github.com/bootandy/dust)
+duf = "latest"                      # Disk usage/free utility (https://github.com/muesli/duf)
+tokei = "latest"                    # Code statistics tool (https://github.com/XAMPPRocky/tokei)
+crush = "latest"                    # SQL-like data processing tool
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CLI UTILITIES - NETWORKING & HTTP
+# ─────────────────────────────────────────────────────────────────────────────
+curlie = "latest"                   # curl with httpie-like output (https://curlie.io)
+rclone = "latest"                   # Cloud storage sync tool (https://rclone.org)
+wrangler = "latest"                 # Cloudflare Workers CLI (https://developers.cloudflare.com/workers)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CLI UTILITIES - DEVELOPER PRODUCTIVITY
+# ─────────────────────────────────────────────────────────────────────────────
+carapace = "latest"                 # Multi-shell completion generator (https://carapace.sh)
+tlrc = "latest"                     # Rust tldr client - simplified man pages (https://github.com/tldr-pages/tlrc)
+grex = "latest"                     # Regex generator from examples (https://github.com/pemistahl/grex)
+hyperfine = "latest"                # Command-line benchmarking (https://github.com/sharkdp/hyperfine)
+gum = "latest"                      # Shell script glamour toolkit (https://github.com/charmbracelet/gum)
+dotenvx = "latest"                  # Enhanced .env file management (https://dotenvx.com)
+boilerplate = "latest"              # Project template scaffolding
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CODE FORMATTING & LINTING
+# ─────────────────────────────────────────────────────────────────────────────
+prettier = "latest"                 # Opinionated code formatter (https://prettier.io)
+black = "latest"                    # Python code formatter (https://black.readthedocs.io)
+shfmt = "latest"                    # Shell script formatter (https://github.com/mvdan/sh)
+shellcheck = "latest"               # Shell script static analysis (https://shellcheck.net)
+trufflehog = "latest"               # Secret scanner (https://trufflesecurity.com)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TASK RUNNERS
+# ─────────────────────────────────────────────────────────────────────────────
+task = "latest"                     # Task runner / simpler Make (https://taskfile.dev)
+just = "latest"                     # Command runner (https://just.systems)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SCHEMA & VALIDATION
+# ─────────────────────────────────────────────────────────────────────────────
+jsonschema = "latest"               # JSON Schema validator
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CARGO-INSTALLED TOOLS
+# ─────────────────────────────────────────────────────────────────────────────
+"cargo:record-query" = "latest"     # SQL query recorder
+"cargo:television" = "latest"       # TUI fuzzy finder (https://alexpasmantier.github.io/television)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NPM GLOBAL TOOLS
+# ─────────────────────────────────────────────────────────────────────────────
+"npm:context7" = "latest"           # Context7 MCP server
+"npm:copilot" = "latest"            # GitHub Copilot CLI
+"npm:exa-mcp-server" = "latest"     # Exa search MCP server
+"npm:git-tip" = "latest"            # Random Git tips
+"npm:pm2" = "latest"                # Node.js process manager (https://pm2.keymetrics.io)
+"npm:concurrently" = "latest"       # Run multiple commands concurrently
+"npm:@xyflow/react" = "latest"      # React Flow diagram library (https://reactflow.dev)
+"npm:llamaindex" = "latest"         # LlamaIndex JS SDK (https://llamaindex.ai)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PIPX TOOLS (Python CLI Applications)
+# ─────────────────────────────────────────────────────────────────────────────
+"pipx:aider-install" = "latest"     # Aider AI pair programming installer
+"pipx:ocrmypdf" = "latest"          # OCR for PDFs (https://ocrmypdf.readthedocs.io)
+"pipx:fixit" = "latest"             # Python auto-fixing linter
+"pipx:pytest" = "latest"            # Python testing framework (https://pytest.org)
+"pipx:pyinstaller" = "latest"       # Python executable builder (https://pyinstaller.org)
+"pipx:llama-index" = "latest"       # LlamaIndex Python SDK (https://llamaindex.ai)
+"pipx:mcpm" = "latest"              # MCP server manager
+
+# ============================================================================
+# ENVIRONMENT VARIABLES (Optional)
+# ============================================================================
+# [env]
+# EDITOR = "micro"
+# MISE_GLOBAL = "true"
+
+# ============================================================================
+# TRUSTED CONFIGURATION PATHS (Optional)
+# ============================================================================
+# [settings.trusted_config_paths]
+# paths = ["~/dev", "~/work", "~/projects"]
+
+# ============================================================================
+# UV TOOL INSTALLATIONS (Manual - not managed by mise)
+# ============================================================================
+# These tools are installed via `uv tool install` and tracked here for documentation
+# Run: mise run sync-uv-tools | update-uv-tools | list-uv-tools
+#
+# Currently tracked:
+# - cronboard: Cron job monitoring dashboard
+# - aider-chat: AI pair programming
+# - Faker: Test data generator
+# - ocrmypdf: OCR for PDFs
+# - ruff: Fast Python linter
+
+[tasks.sync-uv-tools]
+description = "Install/sync all uv tools"
+run = """
+echo "Installing uv tools..."
+uv tool install git+https://github.com/antoniorodr/cronboard
+echo "✓ All uv tools installed"
+"""
+
+[tasks.update-uv-tools]
+description = "Update all uv tools to latest versions"
+run = """
+echo "Updating all uv tools..."
+uv tool upgrade --all
+echo "✓ All uv tools updated"
+"""
+
+[tasks.list-uv-tools]
+description = "List all installed uv tools"
+run = "uv tool list"
