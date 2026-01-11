@@ -70,9 +70,9 @@ difftastic = "latest"               # Structural diff tool (https://difftastic.w
 # CI/CD & DEVOPS
 # ─────────────────────────────────────────────────────────────────────────────
 act = "latest"                      # Run GitHub Actions locally (https://github.com/nektos/act)
-argocd = "2"                        # Kubernetes GitOps - pinned major (https://argo-cd.readthedocs.io)
-helm = "3"                          # Kubernetes package manager - pinned major (https://helm.sh)
-terraform = "1"                     # Infrastructure as Code - pinned major (https://terraform.io)
+argocd = "latest"                   # Kubernetes GitOps continuous delivery (https://argo-cd.readthedocs.io)
+helm = "latest"                     # Kubernetes package manager (https://helm.sh)
+terraform = "latest"                # Infrastructure as Code tool (https://terraform.io)
 ansible = "latest"                  # IT automation platform (https://ansible.com)
 buildpack = "latest"                # Cloud Native Buildpacks CLI (https://buildpacks.io)
 trunk = "latest"                    # Meta linter & DevEx toolkit (https://trunk.io)
